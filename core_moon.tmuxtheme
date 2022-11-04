@@ -21,6 +21,8 @@ thm_black4="#5b6078"
 # ----------------------------=== Theme ===--------------------------
 
 # utils
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 set() {
 	local option=$1
 	local value=$2
@@ -54,9 +56,10 @@ setw window-status-separator ""
 setw window-status-style "fg=${thm_fg},bg=${thm_bg},none"
 
 # --------=== Statusline
-
+PLAYER="$CURRENT_DIR/scripts/player/player.sh"
+echo $PLAYER
 set status-left ""
-set status-right "#[fg=$thm_blue,bg=$thm_bg,nobold,nounderscore,noitalics]#[fg=$thm_bg,bg=$thm_blue,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #(~/.tmux/plugins/custom/player.sh) #{?client_prefix,#[fg=$thm_red],#[fg=$thm_green]}#[bg=$thm_gray]#{?client_prefix,#[bg=$thm_red],#[bg=$thm_green]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #I "
+set status-right "#[fg=$thm_blue,bg=$thm_bg,nobold,nounderscore,noitalics]#[fg=$thm_bg,bg=$thm_blue,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #($PLAYER) #{?client_prefix,#[fg=$thm_red],#[fg=$thm_green]}#[bg=$thm_gray]#{?client_prefix,#[bg=$thm_red],#[bg=$thm_green]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #I "
 # set status-right "#[fg=$thm_blue,bg=$thm_bg,nobold,nounderscore,noitalics]#[fg=$thm_bg,bg=$thm_blue,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #(~/.tmux/plugins/custom/player.sh) #[fg=$thm_pink,bg=$thm_bg,nobold,nounderscore,noitalics]#[bg=$thm_gray]#[fg=$thm_bg,bg=$thm_pink,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #W #{?client_prefix,#[fg=$thm_red],#[fg=$thm_green]}#[bg=$thm_gray]#{?client_prefix,#[bg=$thm_red],#[bg=$thm_green]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #S "
 
 # current_dir
