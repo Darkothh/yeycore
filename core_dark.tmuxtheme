@@ -4,17 +4,19 @@
 # WARNING: hex colors can't contain capital letters
 
 # --> Catppuccin (Macchiato)
-thm_bg="#000000"
-thm_fg="#cad3f5"
-thm_cyan="#91d7e3"
+color_1="#000000"
+color_2="#ffffff"
+color_3="#878787"
+color_4="#a6da95"
+color_5="#87878B"
+color_6="#494d64"
 thm_black="#1e2030"
-thm_gray="#494d64"
 thm_magenta="#c6a0f6"
 thm_pink="#f5bde6"
 thm_red="#ed8796"
 thm_green="#a6da95"
 thm_yellow="#eed49f"
-thm_blue="#8aadf4"
+# color_3="#8aadf4"
 thm_orange="#f5a97f"
 thm_black4="#5b6078"
 
@@ -37,41 +39,41 @@ setw() {
 
 # status
 set status "on"
-set status-bg "${thm_bg}"
+set status-bg "${color_1}"
 set status-justify "left"
 set status-left-length "100"
 set status-right-length "100"
 
 # messages
-set message-style "fg=${thm_cyan},bg=${thm_gray},align=centre"
-set message-command-style "fg=${thm_cyan},bg=${thm_gray},align=centre"
+set message-style "fg=${color_3},bg=${color_6},align=centre"
+set message-command-style "fg=${color_3},bg=${color_6},align=centre"
 
 # panes
-set pane-border-style "fg=${thm_gray}"
-set pane-active-border-style "fg=${thm_blue}"
+set pane-border-style "fg=${color_6}"
+set pane-active-border-style "fg=${color_3}"
 
 # windows
-setw window-status-activity-style "fg=${thm_fg},bg=${thm_bg},none"
+setw window-status-activity-style "fg=${color_2},bg=${color_1},none"
 setw window-status-separator ""
-setw window-status-style "fg=${thm_fg},bg=${thm_bg},none"
+setw window-status-style "fg=${color_2},bg=${color_1},none"
 
 # --------=== Statusline
-PLAYER="$CURRENT_DIR/scripts/player/player.sh"
-echo $PLAYER
-set status-left ""
-set status-right "#[fg=$thm_blue,bg=$thm_bg,nobold,nounderscore,noitalics]#[fg=$thm_bg,bg=$thm_blue,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #($PLAYER) #{?client_prefix,#[fg=$thm_red],#[fg=$thm_green]}#[bg=$thm_gray]#{?client_prefix,#[bg=$thm_red],#[bg=$thm_green]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #I "
-# set status-right "#[fg=$thm_blue,bg=$thm_bg,nobold,nounderscore,noitalics]#[fg=$thm_bg,bg=$thm_blue,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #(~/.tmux/plugins/custom/player.sh) #[fg=$thm_pink,bg=$thm_bg,nobold,nounderscore,noitalics]#[bg=$thm_gray]#[fg=$thm_bg,bg=$thm_pink,nobold,nounderscore,noitalics] #[fg=$thm_fg,bg=$thm_gray] #W #{?client_prefix,#[fg=$thm_red],#[fg=$thm_green]}#[bg=$thm_gray]#{?client_prefix,#[bg=$thm_red],#[bg=$thm_green]}#[fg=$thm_bg] #[fg=$thm_fg,bg=$thm_gray] #S "
+# PLAYER="$CURRENT_DIR/scripts/player/player.sh"
+# echo $PLAYER
+# set status-left ""
+# set status-right ""
+# set status-right "#[fg=$color_3,bg=$color_1,nobold,nounderscore,noitalics]#[fg=$color_1,bg=$thm_blue,nobold,nounderscore,noitalics] #[fg=$color_2,bg=$color_6] #($PLAYER)#[bg=$color_6,fg=$color_4]#{?client_prefix,#[bg=$thm_red],#[bg=$thm_green]}#[fg=$color_1]$(date -u +"%H:%M")"
 
-# current_dir
-setw window-status-format "#[fg=$thm_bg,bg=$thm_blue] #I #[fg=$thm_fg,bg=$thm_gray] #W "
-setw window-status-current-format "#[fg=$thm_bg,bg=$thm_orange] #I #[fg=$thm_fg,bg=$thm_bg] #W "
-# setw window-status-format "#[fg=$thm_bg,bg=$thm_blue] #I #[fg=$thm_fg,bg=$thm_gray] #{pane_title} "
-# setw window-status-current-format "#[fg=$thm_bg,bg=$thm_orange] #I #[fg=$thm_fg,bg=$thm_bg] #{b:pane_current_path} "
+# current_window
+setw window-status-current-format "#[bg=$color_1,fg=$color_4]#[fg=$color_2,bg=$color_4]#I#[bg=$color_3,fg=$color_4]#[fg=$color_2] #W#[bg=$color_1,fg=$color_3]"
+setw window-status-format " #[bg=$color_1,fg=$color_4]#[fg=$color_2,bg=$color_4]#I#[bg=$color_1,fg=$color_4] "
+# setw window-status-format "#[fg=$color_1,bg=$color_3] #I #[fg=$color_2,bg=$color_6] #{pane_title} "
+# setw window-status-current-format "#[fg=$color_1,bg=$thm_orange] #I #[fg=$color_2,bg=$thm_bg] #{b:pane_current_path} "
 
 # parent_dir/current_dir
 # setw window-status-format "#[fg=colour232,bg=colour111] #I #[fg=colour222,bg=colour235] #(echo '#{pane_current_path}' | rev | cut -d'/' -f-2 | rev) "
 # setw window-status-current-format "#[fg=colour232,bg=colour208] #I #[fg=colour255,bg=colour237] #(echo '#{pane_current_path}' | rev | cut -d'/' -f-2 | rev) "
 
 # --------=== Modes
-setw clock-mode-colour "${thm_blue}"
+setw clock-mode-colour "${color_3}"
 setw mode-style "fg=${thm_pink} bg=${thm_black4} bold"
